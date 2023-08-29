@@ -1,0 +1,32 @@
+name: CI & CD pipeline
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3
+
+    - name: linting
+      run: |
+        npm install
+        npm run lint
+      
+    - name: Unit Testing
+      run: |
+        # Assuming you're using npm for testing
+        npm test
+
+    - name: Build and Push Docker Image
+      run: |
+        # Log into Docker Hub
+        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+        # Build the Docker image
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/your-image-name:latest .
+
+        # Push to Docker Hub
+        docker push ${{ secrets.DOCKER_USERNAME }}/your-image-name:latest

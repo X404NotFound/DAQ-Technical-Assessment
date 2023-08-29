@@ -10,11 +10,16 @@ jobs:
     - name: checkout
       uses: actions/checkout@v3
 
-    - name: linting
+    - name: Install dependencies in react repo
+      run: |
+        cd battery-ui
+        npm install
+    
+    - name: linting all projects
       run: |
         npm install
         npm run lint
-      
+
     - name: unit testing
       run: |
         npm test

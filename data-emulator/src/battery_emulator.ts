@@ -40,7 +40,7 @@ function generate_and_send_battery_data() {
         console.log("connection to server closed");
         exit();
     }
-    
+
 }
 
 function getRandomIntInclusive(min: number, max: number) {

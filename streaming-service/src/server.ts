@@ -36,7 +36,7 @@ tcpServer.on('connection', (socket) => {
         
         websocketServer.clients.forEach(function each(client) {
             if (client.readyState === WebSocket.OPEN) {
-              client.send(msg.toString());
+                client.send(msg.toString());
             }
         });
     });

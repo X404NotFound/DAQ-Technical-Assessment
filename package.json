@@ -11,6 +11,7 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "lint": "eslint ./**/*.{ts,tsx}"
+    "lint": "eslint ./**/*.{ts,tsx}",
+    "lint-fix": "eslint --fix ./**/*.{ts,tsx}"
   }
 }

@@ -6,8 +6,8 @@
         "node": true
     },
     "extends": [
-        "plugin:@typescript-eslint/recommended",
-        "plugin:react/recommended",
+        "plugin:@typescript-eslint/recommended", // used to lint ts and tsx
+        "plugin:react/recommended", // used to lint react
         "eslint:recommended"
     ],
     "parser": "@typescript-eslint/parser", // this parser would parse ts and tsx code
@@ -19,7 +19,7 @@
         "react",
         "@typescript-eslint"
     ],
-    "rules": { // rules for ts are copied from comp1531 project
+    "rules": {
         "@typescript-eslint/no-var-requires": 0,
         "no-unused-vars": "off",
         "@typescript-eslint/no-unused-vars": ["error", {
@@ -67,7 +67,7 @@
         "eqeqeq": ["error", "always", { "null": "ignore" }],
         "func-call-spacing": ["error", "never"],
         "generator-star-spacing": ["error", { "before": true, "after": true }],
-        "indent": ["error", 2, {
+        "indent": ["error", 4, {
         "SwitchCase": 1,
         "VariableDeclarator": 1,
         "outerIIFEBody": 1,

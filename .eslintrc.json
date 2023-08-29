@@ -19,6 +19,11 @@
         "react",
         "@typescript-eslint"
     ],
+    "settings": {
+        "react": {
+            "version": "18.2.0" // frontend ui react version
+        }
+    },
     "rules": {
         "@typescript-eslint/no-var-requires": 0,
         "no-unused-vars": "off",

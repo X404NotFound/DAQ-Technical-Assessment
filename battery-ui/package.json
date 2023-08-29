@@ -42,6 +42,7 @@
     ]
   },
   "devDependencies": {
-    "@types/ws": "^8.5.4"
+    "@types/ws": "^8.5.4",
+    "eslint-config-react-app": "^7.0.1"
   }
 }

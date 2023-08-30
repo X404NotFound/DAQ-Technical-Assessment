@@ -3,7 +3,7 @@ name: CI & CD pipeline
 on: [push]
 
 jobs:
-  build:
+  linting:
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +19,7 @@ jobs:
       run: |
         npm install
         npm run lint
-  unit_test:
+  unit_testing:
     runs-on: ubuntu-latest
 
     steps:

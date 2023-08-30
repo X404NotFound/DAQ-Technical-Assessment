@@ -9,3 +9,8 @@ For part2 I understand the question in a way that there is a 5 seconds window we
 Part4
 1. eslint
 Since data-emulator file can not be changed, so I assume the correct indentation is 4, I also let eslint ignore this file to prevent it from being changed by lint-fix by adding the file name to .eslintignore.
+
+since all subdirectory have ts and tsx which is their common part, i decided to include style check for ts and tsx in root directory to reduce redundency, because i believe if subdirectory differ a lot, we need to set them up seperately. Another reason to do so is that i notice in battery-ui there are set-up about eslint config extending the style check root, so i suppose you want us to extend from root, and adding addtional rules for react.
+
+though in cicd the test is run at root, but i still set up the jest script for all the subdirectries, which enables developer to control which test suits to run based on the directory they are in.
+2. 

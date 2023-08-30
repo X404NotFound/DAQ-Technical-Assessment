@@ -46,7 +46,7 @@ jobs:
         run: |
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/data-emulator:latest ./data-emulator
           docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/streaming-service:latest ./streaming-service
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/data-emulator:latest ./data-emulator
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/frontend-ui:latest ./battery-ui
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/data-emulator:latest
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/streaming-service:latest
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/data-emulator:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/frontend-ui:latest

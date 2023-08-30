@@ -3,7 +3,7 @@ import { WebSocket, WebSocketServer } from 'ws';
 import fs from 'fs';
 import * as type from './types';
 
-const TCP_PORT = parseInt(process.env.TCP_PORT || '12000', 10);
+const TCP_PORT = parseInt(process.env.STREAMING_SERVICE_PORT || '12000', 10);
 
 const tcpServer = net.createServer();
 const websocketServer = new WebSocketServer({ port: 8080 });

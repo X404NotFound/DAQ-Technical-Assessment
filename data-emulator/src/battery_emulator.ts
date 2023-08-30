@@ -2,8 +2,8 @@ import net from 'net';
 import { exit } from 'process';
 
 const tcpClient = new net.Socket();
-const HOST = "localhost"
-const PORT = 12000
+const HOST = process.env.STREAMING_SERVICE_HOST || "localhost";
+const PORT = parseInt(process.env.STREAMING_SERVICE_PORT || '12000', 10);
 
 const MILLISECONDS = 500;
 const ERROR_CHANCE = 15;

@@ -15,17 +15,17 @@ services:
       context: ./streaming-service
     environment:
       NODE_ENV: production
-      STREAMING_SERVICE_PORT: 3000
+      STREAMING_SERVICE_PORT: 8080
 
     ports:
-      - 8080:3000
+      - 8080:8080
       
   data-emulator:
     build:
       context: ./data-emulator
     environment:
       NODE_ENV: production
-      STREAMING_SERVICE_PORT: 3000
+      STREAMING_SERVICE_PORT: 8080
       STREAMING_SERVICE_HOST: streaming-service
     ports:
       - 3003:3000

@@ -44,7 +44,6 @@ tcpServer.on('connection', (socket) => {
         } catch (error) {
             console.error('An error occurred when parsing JSON:', error);
         }
-
     });
 
     socket.on('end', () => {

@@ -8,10 +8,11 @@ interface TemperatureProps {
 function LiveValue({ temp } : TemperatureProps) {
 
   let valueColour = getColor(temp);
+  const fahrenheitValue = celsiusToFahrenheit(temp);
 
   return (
-      <header className="live-value" style={{ color : valueColour }}>
-        {`${temp.toString()}°C`}
+      <header className="live-value" style={{ color: valueColour }}>
+          {`${temp.toString()}°C / ${fahrenheitValue.toFixed(2)}°F`}
       </header>
   );
 }
@@ -26,6 +27,11 @@ function getColor(temp: number): string {
   const red = Math.floor(distance * 255); // more red when gets closer to boundary
   const green = Math.floor(255 - red); // more green when gets closer to 50
   return `rgb(${red}, ${green}, 0)`;
+}
+
+// helper function
+function celsiusToFahrenheit(celsius: number) {
+  return (celsius * 9/5) + 32;
 }
 
 export default LiveValue;

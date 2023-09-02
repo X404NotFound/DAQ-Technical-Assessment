@@ -30,15 +30,21 @@ tcpServer.on('connection', (socket) => {
             if (violations.length > 3) {
                 logViolation(currJSON.timestamp); // log to the file
             }
+
+            websocketServer.clients.forEach(function each(client) {
+                if (client.readyState === WebSocket.OPEN) {
+                    const response = {
+                        ...currJSON,
+                        temWarning: currJSON.battery_temperature < 20 || currJSON.battery_temperature > 80,
+                        batWarning: violations.length > 3
+                    };
+                    client.send(JSON.stringify(response));
+                }
+            });
         } catch (error) {
             console.error('An error occurred when parsing JSON:', error);
         }
 
-        websocketServer.clients.forEach(function each(client) {
-            if (client.readyState === WebSocket.OPEN) {
-                client.send(msg.toString());
-            }
-        });
     });
 
     socket.on('end', () => {
